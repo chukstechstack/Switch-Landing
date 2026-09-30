@@ -1,138 +1,126 @@
 import React, { useState, useEffect } from "react";
+import { ArrowDown, ShieldCheck, Play, Coffee, Flame } from "lucide-react";
 import heroBg from "../Assets/Switch.jpg";
-import switchAppBg from "../Assets/Landing.jpg";
-
-const slides = [
-  {
-    image: heroBg,
-    title: "WIN FOCUS GOALS",
-    isAppView: false,
-  },
-  {
-    image: switchAppBg,
-    isAppView: true,
-  },
-  {
-    image: heroBg,
-    title: "WIN FOCUS GOALS",
-    isAppView: false,
-  },
-];
 
 const Hero = () => {
-  const [currentStep, setCurrentStep] = useState(0);
+  // Start as true so the background image lands instantly without a black screen
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const timer1 = setTimeout(() => {
-      setCurrentStep(1);
-    }, 6500);
+    // Wait 300ms after landing, then trigger the content slide-in animation
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 300);
 
-    const timer2 = setTimeout(() => {
-      setCurrentStep(2);
-    }, 13000);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
-  const slide = slides[currentStep];
-  const isSecondSlide = currentStep === 1;
-
   return (
-    <section className="relative flex min-h-screen w-full items-end justify-start overflow-hidden pb-16 pl-8 lg:pl-20 pt-20 bg-black">
+    <section className="relative flex min-h-screen w-full items-end justify-start overflow-hidden pb-12 sm:pb-16 px-4 sm:px-8 lg:px-20 pt-20 bg-black">
 
-      {/* 1. BACKGROUND WITH PULLED-BACK ZOOM FOR THE APP VIEW */}
+      {/* 1. BACKGROUND (Loads instantly, zero opacity transition delay) */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-black">
-        {slides.map((s, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 h-full w-full transition-opacity duration-1000 ease-in-out ${currentStep === index ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
-          >
-            <img
-              src={s.image}
-              alt="Switch Background"
-              className={`h-full w-full object-cover object-center transition-transform duration-1000 ${index === 1 ? "scale-95" : "scale-110"
-                }`}
-            />
-          </div>
-        ))}
+        <div className="absolute inset-0 h-full w-full">
+          <img
+            src={heroBg}
+            alt="Switch Background"
+            className="h-full w-full object-cover lg:object-center opacity-100 scale-100"
+          />
+        </div>
       </div>
 
-      {/* 2. DYNAMIC TEXT CONTAINER (ONLY FOR SLIDE 1 & 3) */}
-      {!isSecondSlide && (
-        <div
-          className="relative z-30 p-8 sm:p-14 transition-all duration-700 bg-emerald-950/20 backdrop-blur-md border-l border-emerald-500/20 max-w-5xl"
-          style={{
-            maskImage: "radial-gradient(circle at 30% 50%, black 30%, rgba(0,0,0,0.6) 60%, transparent 90%)",
-            WebkitMaskImage: "radial-gradient(circle at 30% 50%, black 30%, rgba(0,0,0,0.6) 60%, transparent 90%)",
-          }}
-        >
-          {/* Brand Logo Header Badge */}
-          <div className="flex items-center gap-3 mb-6 transition-all duration-500">
-            <div className="w-10 h-10 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 flex items-center justify-center shadow-lg">
-              <span className="text-emerald-400 font-black text-base tracking-tighter">S</span>
+      {/* 2. DECLUTTERED TEXT CONTAINER (Delayed Slide Up) */}
+      <div
+        className={`relative z-30 p-5 sm:p-10 lg:p-14 bg-emerald-950/60 sm:bg-emerald-950/50 border-l-2 border-emerald-500/60 max-w-5xl w-full rounded-2xl sm:rounded-none transition-all duration-1000 ease-out transform ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+      >
+
+        {/* Top Header Badge & Pomodoro Identity Indicator */}
+        <div className="flex items-center justify-between mb-4 sm:mb-6 flex-wrap gap-3">
+          <div className="flex items-center gap-3">
+            <div className="flex flex-col"></div>
+          </div>
+
+          {/* ACTIVE LOCKDOWN BADGE */}
+          <div className="hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-xl sm:rounded-2xl bg-black/80 border border-emerald-500/40 shadow-sm">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg sm:rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center">
+              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
             </div>
-            <span className="text-white font-black tracking-widest text-sm font-mono [text-shadow:_0_2px_12px_rgb(0_0_0_/_90%)]">
-              SWITCH
-            </span>
-          </div>
-
-          {/* Title Swap */}
-          <div className="transition-all duration-700 ease-out">
-            <h1 className="font-black uppercase tracking-[-0.04em] text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] text-[clamp(3rem,9vw,9.5rem)] leading-[0.85]">
-              {slide.title}
-            </h1>
-          </div>
-
-          {/* Download Button */}
-          <div className="mt-8 flex items-center gap-4">
-            <a
-              href="https://github.com/chukstechstack/SwitchInstaller/releases/latest/download/SwitchInstaller.msi"
-              download
-              className="group relative inline-flex items-center gap-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/25 px-8 py-5 text-sm font-black uppercase tracking-wider text-white shadow-2xl transition-all duration-300 hover:bg-emerald-400 hover:text-black hover:border-emerald-300 hover:scale-[1.02] overflow-hidden"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-              <span className="relative z-10">Download for PC </span>
-              <svg className="relative z-10 h-4 w-4 text-emerald-300 transition-colors duration-300 group-hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-            </a>
+            <div className="flex flex-col">
+              <span className="text-[9px] sm:text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider leading-none">Timer Mode</span>
+              <span className="text-[11px] sm:text-xs font-mono text-white font-bold leading-tight mt-0.5">25:00 DEEP WORK</span>
+            </div>
           </div>
         </div>
-      )}
 
-      {/* 3. DOWNLOAD BUTTON FOR SECOND SLIDE (FITS OVER THE CLEAN IMAGE) */}
-      {isSecondSlide && (
-        <div className="absolute bottom-16 left-8 lg:left-20 z-30 flex items-center gap-4 transition-all duration-700">
+        {/* Title & Core Subtitle */}
+        <div>
+          <h1 className="font-black uppercase tracking-[-0.04em] text-white text-[clamp(2rem,7vw,7rem)] leading-[0.95]">
+            APP LOCK ON TIMER
+          </h1>
+        </div>
+
+        {/* POMODORO INTERVAL MODE PILLS */}
+        <div className="mt-4 sm:mt-6 flex items-center gap-2.5 flex-wrap">
+          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/30 border border-emerald-300 text-white font-mono text-xs font-bold shadow-[0_0_15px_rgba(52,211,153,0.3)] transition-transform duration-300 hover:scale-105">
+            <Play className="w-3.5 h-3.5 fill-emerald-300 text-emerald-300" /> 25m Focus Session
+          </div>
+          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black/70 border border-emerald-500/30 text-zinc-200 font-mono text-xs font-medium transition-transform duration-300 hover:scale-105">
+            <Coffee className="w-3.5 h-3.5 text-emerald-400" /> 5m Break
+          </div>
+          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black/70 border border-emerald-500/30 text-zinc-200 font-mono text-xs font-medium transition-transform duration-300 hover:scale-105">
+            <Flame className="w-3.5 h-3.5 text-emerald-400" /> 50m Deep Work
+          </div>
+        </div>
+
+        {/* Download Button */}
+        <div className="mt-5 sm:mt-6 flex items-center gap-4">
           <a
             href="https://github.com/chukstechstack/SwitchInstaller/releases/latest/download/SwitchInstaller.msi"
             download
-            className="group relative inline-flex items-center gap-3 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/25 px-8 py-5 text-sm font-black uppercase tracking-wider text-white shadow-2xl transition-all duration-300 hover:bg-emerald-400 hover:text-black hover:border-emerald-300 hover:scale-[1.02] overflow-hidden"
+            className="group relative inline-flex items-center gap-3 rounded-xl sm:rounded-2xl bg-white/10 border border-white/25 px-6 sm:px-8 py-4 sm:py-5 text-xs sm:text-sm font-black uppercase tracking-wider text-white transition-all duration-300 hover:bg-emerald-400 hover:text-black hover:border-emerald-300 hover:shadow-[0_0_20px_rgba(52,211,153,0.4)] w-full sm:w-auto justify-center"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            <span className="relative z-10">Download for PC </span>
-            <svg className="relative z-10 h-4 w-4 text-emerald-300 transition-colors duration-300 group-hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
+            <span className="relative z-10">Download for PC</span>
+            <ArrowDown className="relative z-10 h-4 w-4 text-emerald-300 transition-transform duration-300 group-hover:translate-y-1 group-hover:text-black" />
           </a>
         </div>
-      )}
+      </div>
 
-      {/* Pagination Dots */}
-      <div className="absolute bottom-6 right-8 z-30 flex gap-2">
-        {[0, 1].map((dotIndex) => (
-          <button
-            key={dotIndex}
-            onClick={() => setCurrentStep(dotIndex === 0 ? 0 : 1)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${(currentStep === dotIndex) || (currentStep === 2 && dotIndex === 0)
-              ? "w-8 bg-white"
-              : "w-2 bg-white/40"
-              }`}
-          />
-        ))}
+      {/* 3. VERTICAL POMODORO TIMER WIDGET (Delayed Slide From Right) */}
+      <div
+        className={`hidden xl:flex flex-col items-center justify-between absolute right-12 top-1/2 -translate-y-1/2 z-30 w-40 py-8 bg-black/95 border-2 border-emerald-400/80 rounded-[3rem] shadow-[0_0_35px_rgba(16,185,129,0.35)] transition-all duration-1000 ease-out transform delay-150 ${isLoaded ? "translate-x-0 opacity-100" : "translate-x-12 opacity-0"
+          }`}
+      >
+        {/* Top Explicit Pomodoro Label */}
+        <div className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/60 flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="font-mono text-[9px] font-black tracking-widest text-emerald-300 uppercase">POMODORO</span>
+        </div>
+
+        {/* Vertical Countdown Timer */}
+        <div className="my-6 [writing-mode:vertical-lr] rotate-180 flex items-center gap-3">
+          <span className="font-mono font-black text-5xl tracking-[0.2em] text-emerald-300 drop-shadow-[0_0_15px_rgba(52,211,153,0.6)]">
+            25:00
+          </span>
+          <div className="w-12 h-[2px] bg-emerald-400/80 my-3" />
+          <span className="font-mono text-[10px] tracking-[0.25em] text-white font-black uppercase whitespace-nowrap">
+            WORK INTERVAL
+          </span>
+        </div>
+
+        {/* VISIBLE POMODORO SESSION CYCLE TRACKER */}
+        <div className="w-full px-4 flex flex-col items-center gap-2">
+          <div className="flex items-center justify-between w-full font-mono text-[10px] font-bold text-emerald-400 px-1">
+            <span>CYCLE</span>
+            <span className="text-white">02 / 04</span>
+          </div>
+          <div className="grid grid-cols-4 gap-1.5 w-full">
+            <div className="h-2.5 rounded-sm bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+            <div className="h-2.5 rounded-sm bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+            <div className="h-2.5 rounded-sm bg-zinc-800 border border-zinc-700" />
+            <div className="h-2.5 rounded-sm bg-zinc-800 border border-zinc-700" />
+          </div>
+        </div>
       </div>
 
     </section>
