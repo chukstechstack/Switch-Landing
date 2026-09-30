@@ -21,7 +21,7 @@
 
 ---
 
-## 🎬 Cinematic Preview
+## 🎬 Preview
 
 > *Designed with deep focus, frosted glass semantics, and high-performance React architectures to give you an immersive productivity workspace.*
 
