@@ -46,7 +46,7 @@
 
 ## 🌐 Live Experience & Installation
 
-*   🌟 **Test in Browser:** Check out the live cinematic landing page at **[switch-landing.onrender.com](https://switch-landing.onrender.com/)**.
+*   🌟 **Test in Browser:** Check out the live landing page at **[switch-landing.onrender.com](https://switch-landing.onrender.com/)**.
 *   💻 **Get the Desktop App:** 
     1. Head over to the **[Releases Page](https://github.com/chukstechstack/SwitchInstaller/releases/latest)**.
     2. Download the latest `SwitchInstaller.msi`.
