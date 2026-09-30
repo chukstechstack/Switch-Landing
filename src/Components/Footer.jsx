@@ -58,7 +58,7 @@ const Footer = () => {
                         <div className="flex flex-col gap-3">
                             {/* GitHub Card */}
                             <a
-                                href="https://github.com/chukstechstack/Switch-Landinge"
+                                href="https://github.com/chukstechstack/Switch"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group flex items-center justify-between p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-400/50 hover:bg-zinc-900 transition-all duration-300"
