@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <img src="https://img.shields.io/badge/SWITCH-OS-emerald?style=for-the-badge&logo=windows&logoColor=white" alt="Switch Logo" />
+  
+  # ⚡ SWITCH_
+  
+  <p align="center">
+    <b>The Ultimate Minimalist Focus & Goal Execution Engine for Desktop.</b><br>
+    <i>Lock distractions out. Channel total flow state. Win your day.</i>
+  </p>
 
-## Available Scripts
+  <p align="center">
+    <a href="https://github.com/chukstechstack/SwitchInstaller/releases/latest/download/SwitchInstaller.msi">
+      <img src="https://img.shields.io/badge/Download_for_PC-.MSI_Installer-10B981?style=flat-square&logo=windows&logoColor=white" alt="Download MSI" />
+    </a>
+    <img src="https://img.shields.io/github/v/release/chukstechstack/SwitchInstaller?style=flat-square&color=emerald" alt="Release Version" />
+    <img src="https://img.shields.io/badge/Platform-Windows_10_%2F_11-blue?style=flat-square&logo=windows" alt="Platform" />
+  </p>
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🎬 Cinematic Preview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> *Designed with deep focus, frosted glass semantics, and high-performance React architectures to give you an immersive productivity workspace.*
 
-### `npm test`
+<div align="center">
+  <br>
+  <!-- Replace or point to your live banner/screenshot assets if hosted -->
+  <img src="./src/Assets/Landing.jpg" alt="Switch App Interface" width="90%" style="border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.8);" />
+  <br><br>
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✨ Core Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*   🎯 **Win Focus Goals** — Break down macro projects into strict execution blocks with uncompromising visual clarity.
+*   🛡️ **Deep-Blur Glassmorphism** — Crafted with lightweight frosted components and dynamic contrast overlays that melt into your workflow.
+*   ⚡ **Lightning Fast Performance** — Built using modern web tech stack optimizations to run effortlessly with minimal resource consumption.
+*   🔒 **Zero Friction Setup** — Streamlined `.msi` installer package designed for instant deployment on Windows PCs.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📥 Quick Installation
 
-### `npm run eject`
+Get up and running in seconds:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Head over to the **[Releases Page](https://github.com/chukstechstack/SwitchInstaller/releases/latest)**.
+2. Download the latest `SwitchInstaller.msi`.
+3. Run the installer and launch **SWITCH** from your desktop.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+# Or download directly via PowerShell (Optional command-line option)
+Invoke-WebRequest -Uri "[https://github.com/chukstechstack/SwitchInstaller/releases/latest/download/SwitchInstaller.msi](https://github.com/chukstechstack/SwitchInstaller/releases/latest/download/SwitchInstaller.msi)" -OutFile "SwitchInstaller.msi"
+Start-Process "SwitchInstaller.msi"
