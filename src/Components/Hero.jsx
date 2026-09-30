@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ArrowDown, ShieldCheck, Play, Coffee, Flame } from "lucide-react";
+import { ArrowDown, ShieldCheck } from "lucide-react";
 import heroBg from "../Assets/Switch.jpg";
 
 const Hero = () => {
-  // Start as true so the background image lands instantly without a black screen
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -29,20 +28,25 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* FINAL SHIFTED & HIGH-CONTRAST MOTIVATIONAL SIGNATURE */}
+      <div className="absolute right-56 bottom-10 z-25 hidden xl:flex flex-col items-end pointer-events-none select-none">
+        <span className="font-mono text-xl lg:text-2xl font-bold tracking-[0.2em] text-white uppercase leading-none drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+          Achieve. Win.
+        </span>
+        <span className="font-mono text-3xl lg:text-4xl font-bold tracking-[0.15em] text-zinc-200 uppercase mt-3 italic drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          Set your <span className="text-red-500 font-black not-italic text-4xl lg:text-5xl drop-shadow-[0_0_15px_rgba(239,68,68,0.6)]">goals</span>
+        </span>
+      </div>
+
       {/* 2. DECLUTTERED TEXT CONTAINER (Delayed Slide Up) */}
       <div
         className={`relative z-30 p-5 sm:p-10 lg:p-14 bg-emerald-950/60 sm:bg-emerald-950/50 border-l-2 border-emerald-500/60 max-w-5xl w-full rounded-2xl sm:rounded-none transition-all duration-1000 ease-out transform ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
       >
 
-        {/* Top Header Badge & Pomodoro Identity Indicator */}
-        <div className="flex items-center justify-between mb-4 sm:mb-6 flex-wrap gap-3">
-          <div className="flex items-center gap-3">
-            <div className="flex flex-col"></div>
-          </div>
-
-          {/* ACTIVE LOCKDOWN BADGE */}
-          <div className="hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-xl sm:rounded-2xl bg-black/80 border border-emerald-500/40 shadow-sm">
+        {/* TOP-LEFT TIMER MODE BADGE */}
+        <div className="flex items-center mb-6">
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl sm:rounded-2xl bg-black/80 border border-emerald-500/40 shadow-sm">
             <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg sm:rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center">
               <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
             </div>
@@ -58,19 +62,6 @@ const Hero = () => {
           <h1 className="font-black uppercase tracking-[-0.04em] text-white text-[clamp(2rem,7vw,7rem)] leading-[0.95]">
             APP LOCK ON TIMER
           </h1>
-        </div>
-
-        {/* POMODORO INTERVAL MODE PILLS */}
-        <div className="mt-4 sm:mt-6 flex items-center gap-2.5 flex-wrap">
-          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/30 border border-emerald-300 text-white font-mono text-xs font-bold shadow-[0_0_15px_rgba(52,211,153,0.3)] transition-transform duration-300 hover:scale-105">
-            <Play className="w-3.5 h-3.5 fill-emerald-300 text-emerald-300" /> 25m Focus Session
-          </div>
-          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black/70 border border-emerald-500/30 text-zinc-200 font-mono text-xs font-medium transition-transform duration-300 hover:scale-105">
-            <Coffee className="w-3.5 h-3.5 text-emerald-400" /> 5m Break
-          </div>
-          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black/70 border border-emerald-500/30 text-zinc-200 font-mono text-xs font-medium transition-transform duration-300 hover:scale-105">
-            <Flame className="w-3.5 h-3.5 text-emerald-400" /> 50m Deep Work
-          </div>
         </div>
 
         {/* Download Button */}
