@@ -1,20 +1,27 @@
 import React from "react";
-// import NavBar from "./Components/Navbar";
 import Hero from "./Components/Hero";
-// import Features from "./Components/Features";
-// import Showcase from "./Components/ShowCase";
-// import About from "./Components/About";
-// import CtaBand from "./Components/CtaBand";
-// import Footer from "./Components/Footer";
+import Features from "./Components/Features";
+import Footer from "./Components/Footer";
 
-const App = () => {
+function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-   
+    <main className="bg-black min-h-screen text-white relative selection:bg-emerald-400 selection:text-black">
+      {/* Section 1: Locked Hero background */}
+      <div className="sticky top-0 h-screen w-full z-10 overflow-hidden">
         <Hero />
-  
-    </div>
+      </div>
+
+      {/* Section 2: Smooth architectural overlay */}
+      <div className="relative z-20 shadow-[0_-50px_90px_rgba(0,0,0,0.8)]">
+        <Features />
+      </div>
+
+      {/* Section 3: Final closing footer */}
+      <div className="relative z-30">
+        <Footer />
+      </div>
+    </main>
   );
-};
+}
 
 export default App;
