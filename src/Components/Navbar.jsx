@@ -45,7 +45,7 @@ const Navbar = () => {
                     <div className="flex flex-col">
                         <span className={`font-black tracking-[0.25em] text-lg sm:text-2xl uppercase italic transition-colors duration-300 ${isScrolledToLightSection ? "text-zinc-900 [text-shadow:_none]" : "text-white [text-shadow:_0_2px_15px_rgb(0_0_0_/_100%),_0_0_30px_rgb(0_0_0_/_80%)]"
                             }`}>
-                            SWITCH<span className="text-emerald-500">_</span>
+                            SWITCH<span className="text-emerald-500"></span>
                         </span>
                         <span className={`text-[10px] sm:text-xs font-mono tracking-[0.2em] font-extrabold italic transition-colors duration-300 ${isScrolledToLightSection ? "text-emerald-700 [text-shadow:_none]" : "text-emerald-300 [text-shadow:_0_2px_10px_rgb(0_0_0_/_100%)]"
                             }`}>
@@ -62,7 +62,7 @@ const Navbar = () => {
                             : "bg-black/20 border border-white/10 text-white shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:border-emerald-400/50 hover:text-emerald-300 hover:bg-black/40 [text-shadow:_0_2px_10px_rgb(0_0_0_/_100%)]"
                             }`}
                     >
-                        // FEATURES
+                     ABOUT
                     </button>
                     <button
                         onClick={() => scrollToSection("footer")}
@@ -71,7 +71,7 @@ const Navbar = () => {
                             : "bg-black/20 border border-white/10 text-white shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:border-emerald-400/50 hover:text-emerald-300 hover:bg-black/40 [text-shadow:_0_2px_10px_rgb(0_0_0_/_100%)]"
                             }`}
                     >
-                        // FOOTER
+                        CONTACT
                     </button>
                 </nav>
 
@@ -102,14 +102,14 @@ const Navbar = () => {
                         className={`w-full py-4 rounded-2xl border font-mono text-sm tracking-[0.25em] font-black italic uppercase text-center shadow-lg ${isScrolledToLightSection ? "bg-zinc-100 border-zinc-300 text-zinc-900" : "bg-black/30 border-white/10 text-emerald-300"
                             }`}
                     >
-                        // FEATURES
+                        ABOUT
                     </button>
                     <button
                         onClick={() => scrollToSection("footer")}
                         className={`w-full py-4 rounded-2xl border font-mono text-sm tracking-[0.25em] font-black italic uppercase text-center shadow-lg ${isScrolledToLightSection ? "bg-zinc-100 border-zinc-300 text-zinc-900" : "bg-black/30 border-white/10 text-emerald-300"
                             }`}
                     >
-                        // FOOTER
+                        CONTACT
                     </button>
                 </div>
             )}
