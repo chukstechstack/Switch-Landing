@@ -7,7 +7,7 @@ const CINEMATIC_EASE = [0.16, 1, 0.3, 1];
 
 const Features = () => {
     return (
-        <section className="relative w-full bg-[#FAFAFA] py-32 px-6 sm:px-12 lg:px-24 text-zinc-950 overflow-hidden rounded-t-[3.5rem] border-t border-zinc-200">
+        <section id="section-2" className="relative w-full bg-[#FAFAFA] py-32 px-6 sm:px-12 lg:px-24 text-zinc-950 overflow-hidden rounded-t-[3.5rem] border-t border-zinc-200">
 
             <div className="max-w-[1400px] mx-auto">
 
@@ -29,7 +29,7 @@ const Features = () => {
                             </span>
                         </div>
                         <span className="text-zinc-500 font-mono text-xs tracking-widest uppercase">
-              // .NET 10 + WPF + WinService
+                            .NET 10 + WPF + WinService
                         </span>
                     </motion.div>
 
@@ -45,7 +45,7 @@ const Features = () => {
                         >
                             <h2 className="text-[clamp(2.8rem,6.5vw,7rem)] font-extrabold uppercase tracking-[-0.05em] leading-[0.9] text-zinc-950">
                                 <span className="block font-light tracking-[0.05em] text-zinc-400 text-[0.5em] mb-2">
-                                    01 // SYSTEM CORE
+                                    SYSTEM CORE
                                 </span>
                                 ENGINEERED <br />
                                 <span className="relative inline-block mt-2">
