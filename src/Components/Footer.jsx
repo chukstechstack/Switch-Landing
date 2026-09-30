@@ -54,7 +54,7 @@ const Footer = () => {
 
                     {/* Column 2: Stunning Bold Social Cards (GitHub & LinkedIn) */}
                     <div>
-                        <h4 className="font-mono text-xs text-zinc-500 font-bold uppercase tracking-widest mb-6">// DIRECT CHANNELS</h4>
+                        <h4 className="font-mono text-xs text-zinc-500 font-bold uppercase tracking-widest mb-6"> DIRECT CHANNELS</h4>
                         <div className="flex flex-col gap-3">
                             {/* GitHub Card */}
                             <a
@@ -102,7 +102,7 @@ const Footer = () => {
 
                     {/* Column 3: Tech Stack (Clean, Bold, No Heavy Backgrounds) */}
                     <div>
-                        <h4 className="font-mono text-xs text-zinc-500 font-bold uppercase tracking-widest mb-6">// ARCHITECTURE</h4>
+                        <h4 className="font-mono text-xs text-zinc-500 font-bold uppercase tracking-widest mb-6">ARCHITECTURE</h4>
                         <ul className="space-y-4 font-mono text-sm sm:text-base text-zinc-200 font-bold tracking-tight">
                             <li className="hover:text-emerald-400 transition-colors cursor-default">• WPF Desktop UI</li>
                             <li className="hover:text-emerald-400 transition-colors cursor-default">• .NET 10 Framework</li>
@@ -113,7 +113,7 @@ const Footer = () => {
 
                     {/* Column 4: Contact / Email */}
                     <div>
-                        <h4 className="font-mono text-xs text-zinc-500 font-bold uppercase tracking-widest mb-6">// INQUIRIES</h4>
+                        <h4 className="font-mono text-xs text-zinc-500 font-bold uppercase tracking-widest mb-6"> INQUIRIES</h4>
                         <p className="text-zinc-300 text-sm font-bold mb-2">Get in touch:</p>
                         <a href="mailto:chuks.techstack@gmail.com" className="text-emerald-400 font-mono text-sm underline underline-offset-4 hover:text-emerald-300 transition-colors">
                             chuks.techstack@gmail.com
